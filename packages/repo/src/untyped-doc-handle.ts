@@ -1,6 +1,6 @@
 import { getLogger, type Logger } from "@logtape/logtape"
 import type { ObjectValue, PresenceInterface } from "@loro-extended/change"
-import type { LoroDoc, Value } from "loro-crdt"
+import type {LoroDoc, PeerID, Value} from "loro-crdt"
 import type { Synchronizer } from "./synchronizer.js"
 import type { DocContent, DocId, LoroDocMutator, ReadyState } from "./types.js"
 
@@ -147,7 +147,7 @@ export class UntypedDocHandle {
   /**
    * Get the peer ID of the local peer.
    */
-  get peerId(): string {
+  get peerId(): PeerID {
     return this.synchronizer.identity.peerId
   }
 
